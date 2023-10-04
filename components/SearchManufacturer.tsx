@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 
@@ -28,7 +27,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
       <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className='absolute top-[14px]'>
-            <Image src='/car-logo.svg' alt='Car Logo' width={20} height={20} className='ml-4' />
+            <img src='./car-logo.svg' alt='Car Logo' width={20} height={20} className='ml-4' />
           </Combobox.Button>
           <Combobox.Input className='search-manufacturer__input' placeholder='Volkswagen...' displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => SetQuery(e.target.value)} />

@@ -1,7 +1,6 @@
 'use client'
 import { Fragment, useState } from "react"
 import { useRouter } from 'next/navigation';
-import Image from "next/image";
 import { Listbox, Transition } from '@headlessui/react';
 import { CustomFilterProps } from "@/types";
 import { updateSearchParams } from "@/utils";
@@ -29,7 +28,7 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
         <div className="relative w-fit z-10">
           <Listbox.Button className='custom-filter__btn'>
             <span className="block truncate">{selected.title}</span>
-            <Image
+            <img
               src='/chevron-up-down.svg'
               width={20}
               height={20}

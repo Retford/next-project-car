@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import CustomButton from './CustomButton'
 
 function Hero() {
@@ -15,6 +14,7 @@ function Hero() {
         </h1>
         <p className='hero__subtitle'>Streamline your car rental experience with our offortless booking process.</p>
         <CustomButton
+          btnType='button'
           title="Explore Cars"
           containerStyles="bg-primary-blue text-white rounded-full mt-10"
           handleClick={handleScroll}
@@ -22,7 +22,7 @@ function Hero() {
       </div>
       <div className='hero__image-container'>
         <div className='hero__image'>
-          <Image src="/hero.png" alt='hero' fill className='object-contain' />
+          <img src="./hero.png" alt='hero' className='object-contain' />
         </div>
         <div className="hero__image-overlay"></div>
       </div>

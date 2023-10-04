@@ -1,7 +1,6 @@
 'use client'
 
 import { CardProps } from '@/types';
-import Image from 'next/image';
 import { Fragment } from 'react';
 
 import { Dialog, Transition } from '@headlessui/react'
@@ -42,7 +41,7 @@ const CardDetails = ({ isOpen, closeModal, car }: CardDetailsProps) => {
                     type='button'
                     onClick={closeModal}
                     className='absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full'>
-                    <Image
+                    <img
                       src='/close.svg'
                       alt='Close'
                       width={20}
@@ -52,17 +51,17 @@ const CardDetails = ({ isOpen, closeModal, car }: CardDetailsProps) => {
 
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
-                      <Image src={generateCarImagenUrl(car)} alt='car model' fill priority className='object-contain' />
+                      <img src={generateCarImagenUrl(car)} alt='car model' className='object-contain' />
                     </div>
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                        <Image src={generateCarImagenUrl(car, '29')} alt='car model' fill priority className='object-contain' />
+                        <img src={generateCarImagenUrl(car, '29')} alt='car model' className='object-contain' />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                        <Image src={generateCarImagenUrl(car, '33')} alt='car model' fill priority className='object-contain' />
+                        <img src={generateCarImagenUrl(car, '33')} alt='car model' className='object-contain' />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                        <Image src={generateCarImagenUrl(car, '13')} alt='car model' fill priority className='object-contain' />
+                        <img src={generateCarImagenUrl(car, '13')} alt='car model' className='object-contain' />
                       </div>
                     </div>
                   </div>

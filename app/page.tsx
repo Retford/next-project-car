@@ -1,15 +1,22 @@
 import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@/components'
 import { fuels, yearsOfProduction } from '@/constants'
 import { fetchCards } from '@/utils'
-import Image from 'next/image'
 
-export default async function Home({ searchParams }) {
+interface SearchParamsProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}
+
+export default async function Home({ searchParams }: { searchParams: SearchParamsProps }) {
   const allCars = await fetchCards({
     manufacturer: searchParams.manufacturer || '',
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || '',
     limit: searchParams.limit || 10,
-    model: searchParams.mode || '',
+    model: searchParams.model || '',
   })
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
@@ -48,7 +55,7 @@ export default async function Home({ searchParams }) {
             <div className='home__error-container'>
               <h2 className='text-black text-xl font-bold'>
                 Oops, no results</h2>
-              <p>{allCars.message}</p>
+              <p>No cars found</p>
             </div>
           )
         }
